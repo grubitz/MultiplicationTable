@@ -1,0 +1,14 @@
+{
+    "name": "edmonds/multiplicationtable",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Bart Cielinski",
+            "email": "bcielinski@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": { "": "src/" }
+    }
+}
