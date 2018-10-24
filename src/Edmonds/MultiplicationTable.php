@@ -23,7 +23,7 @@ class MultiplicationTable
         $width = strlen(count($table) * count($table));
         $rowLength = count($table) * ($width + 1) + 1;
         $line = str_repeat("=", $rowLength) . "\n";
-        foreach ($table as $index => $row) {
+        foreach ($table as $row) {
             echo $line;
             echo "|";
             foreach ($row as $cell) {
