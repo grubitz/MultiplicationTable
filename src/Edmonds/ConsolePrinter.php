@@ -2,10 +2,18 @@
 
 namespace Edmonds;
 
-class PrintToConsole
+class ConsolePrinter
 {
-    public static function printToConsole(array $table)
+    private $mt;
+
+    public function __construct(MultiplicationTable $mt)
     {
+        $this->mt = $mt;
+    }
+
+    public function print()
+    {
+        $table = $this->mt->getValues();
         $width = strlen(count($table) * count($table));
         $rowLength = count($table) * ($width + 1) + 1;
         $line = str_repeat("=", $rowLength) . "\n";
@@ -21,3 +29,5 @@ class PrintToConsole
         echo $line;
     }
 }
+
+

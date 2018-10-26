@@ -8,6 +8,6 @@ $size = isset($argv[1]) ? $argv[1] : null;
 $size = Validator::validate($size);
 
 $mt = new MultiplicationTable($size);
-$table = $mt->getValues();
 
-PrintToConsole::printToConsole($table);
+$printer = new ConsolePrinter($mt);
+$printer->print();

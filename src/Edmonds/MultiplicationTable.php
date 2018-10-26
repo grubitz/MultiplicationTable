@@ -11,6 +11,11 @@ class MultiplicationTable
         $this->size = $size;
     }
 
+    public function getSize()
+    {
+        return $this->size;
+    }
+
     public function getValues()
     {
         $table = [];

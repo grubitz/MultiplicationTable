@@ -8,7 +8,6 @@ $size = isset($_GET["size"]) ? $_GET["size"] : null;
 $size = Validator::validate($size);
 
 $mt = new MultiplicationTable($size);
-$table = $mt->getValues();
 
 ?>
 
@@ -29,21 +28,8 @@ $table = $mt->getValues();
     </form>
     <table>
         <?php
-            foreach ($table as $index => $row) {
-                if ($index === 1) {
-                    echo "<tr><th>*</th>";
-                    foreach ($row as $cell) {
-                        echo "<th style='width:" . (100 / ($size + 1)) . "%'>" . $cell . "</th>";
-                    }
-                    echo "</tr>";
-                }
-                echo "<tr>";
-                echo "<th style='width:" . (100 / ($size + 1)) . "%'>{$index}</th>";
-                foreach ($row as $cell) {
-                    echo "<td style='width:" . (100 / ($size + 1)) . "%'>" . $cell . "</td>";
-                }
-                echo "</tr>";
-            }        
+            $printer = new HTMLPrinter($mt);
+            $printer->print();
         ?>
     </table>
   </body>   
