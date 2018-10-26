@@ -1,7 +1,13 @@
 <?php
 
+namespace Edmonds;
+
 require './vendor/autoload.php';
 
-$mt = new \Edmonds\MultiplicationTable();
+$mt = new MultiplicationTable();
 
-$mt->printToConsole($mt->getMultiplicationTable(10));
+$size = isset($argv[1]) ? $argv[1] : null;
+$size = Validator::validate($size);
+
+
+PrintToConsole::printToConsole($mt->getMultiplicationTable($size));
