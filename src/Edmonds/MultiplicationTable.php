@@ -4,12 +4,19 @@ namespace Edmonds;
 
 class MultiplicationTable
 {
-    public function getMultiplicationTable(int $size)
+    private $size;
+
+    public function __construct(int $size)
+    {
+        $this->size = $size;
+    }
+
+    public function getValues()
     {
         $table = [];
 
-        for ($row=1; $row<=$size; $row++) {
-            for ($col=1; $col<=$size; $col++) {
+        for ($row=1; $row<=$this->size; $row++) {
+            for ($col=1; $col<=$this->size; $col++) {
                 $table[$row][] = $row*$col;
             }
         }

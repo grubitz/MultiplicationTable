@@ -4,15 +4,16 @@ namespace Edmonds;
 
 require './vendor/autoload.php';
 
-$mt = new MultiplicationTable();
 $size = isset($_GET["size"]) ? $_GET["size"] : null;
 $size = Validator::validate($size);
-$table = $mt->getMultiplicationTable($size);
+
+$mt = new MultiplicationTable($size);
+$table = $mt->getValues();
 
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8">
     <title>Multiplication Table</title>
@@ -22,9 +23,9 @@ $table = $mt->getMultiplicationTable($size);
     <form action="/web.php" method="get"> 
         <div>
             <label for="size">Please input table size:</label>
-            <input type="text" name="size" value="<?= $size ?>" />
+            <input id="size" type="text" name="size" value="<?= $size ?>" />
             <input type="submit" value="Multiply!" /> 
-        <div>
+        </div>
     </form>
     <table>
         <?php
