@@ -26,7 +26,7 @@ class MultiplicationTable
      * 
      * @return int
      */
-    public function getSize()
+    public function getSize(): int
     {
         return $this->size;
     }
@@ -36,7 +36,7 @@ class MultiplicationTable
      * 
      * @return array 
      */
-    public function getValues()
+    public function getValues(): array
     {
         $table = [];
 

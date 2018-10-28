@@ -26,7 +26,7 @@ class HTMLPrinter
      * 
      * @return void
      */
-    public function print()
+    public function print(): void
     {
         $table = $this->mt->getValues();
         $size = $this->mt->getSize();

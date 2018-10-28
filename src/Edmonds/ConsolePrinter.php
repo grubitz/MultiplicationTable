@@ -31,7 +31,7 @@ class ConsolePrinter
      * 
      * @return void
      */
-    public function print()
+    public function print(): void
     {
         $values = $this->mt->getValues();
         $colWidth = strlen((string)($this->mt->getSize() * $this->mt->getSize()));
@@ -60,7 +60,7 @@ class ConsolePrinter
      * 
      * @return string
      */
-    private function getColoredString(string $string) 
+    private function getColoredString(string $string): string 
     {
         return self::COLOR_START . $string . self::COLOR_END;
     }
