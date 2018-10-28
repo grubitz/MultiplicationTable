@@ -30,6 +30,7 @@ class HTMLPrinter
     {
         $table = $this->mt->getValues();
         $size = $this->mt->getSize();
+        echo "<table>";
         foreach ($table as $index => $row) {
             if ($index === 1) {
                 echo "<tr><th>*</th>";
@@ -45,5 +46,6 @@ class HTMLPrinter
             }
             echo "</tr>";
         }
+        echo "</table>";
     }
 }

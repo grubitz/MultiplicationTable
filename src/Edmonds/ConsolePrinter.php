@@ -47,8 +47,8 @@ class ConsolePrinter
             }
             echo "\n";
             if ($rowNum === 1) {
-                $divider = " " . str_repeat(self::ROW_DIVIDER_CHAR, (count($values) * ($colWidth + 1) - 1)) . "\n";
-                echo $this->getColoredString($divider);
+                $divider = " " . str_repeat(self::ROW_DIVIDER_CHAR, (count($values) * ($colWidth + 1) - 1));
+                echo $this->getColoredString($divider). "\n";
             }
         }
     }

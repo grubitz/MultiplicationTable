@@ -27,11 +27,9 @@ $mt = new MultiplicationTable($size);
             <input type="submit" value="Multiply!" /> 
         </div>
     </form>
-    <table>
-        <?php
-            $printer = new HTMLPrinter($mt);
-            $printer->print();
-        ?>
-    </table>
+    <?php
+        $printer = new HTMLPrinter($mt);
+        $printer->print();
+    ?>
   </body>   
 </html>
