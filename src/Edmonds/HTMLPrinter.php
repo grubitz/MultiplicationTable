@@ -2,15 +2,29 @@
 
 namespace Edmonds;
 
+/**
+ * Prints the HTML representation of the table.
+ */
 class HTMLPrinter
 {
+    /** @var MultiplicationTable $mt contains the table to print */
     private $mt;
     
+    /**
+     * Pass the table to be printed.
+     * 
+     * @param MultiplicationTable $mt
+     */
     public function __construct(MultiplicationTable $mt)
     {
         $this->mt = $mt;
     }
 
+    /**
+     * Prints the HTML representation of the table.
+     * 
+     * @return void
+     */
     public function print()
     {
         $table = $this->mt->getValues();

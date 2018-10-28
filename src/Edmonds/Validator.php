@@ -2,9 +2,19 @@
 
 namespace Edmonds;
 
+/**
+ * Provides validation functions for input variables.
+ */
 class Validator
 {
-    public static function validate($input)
+    /**
+     * Validates size variable. Returns default value if criteria not met.
+     * 
+     * @param mixed $size
+     * 
+     * @return int
+     */
+    public static function validateSize($size)
     {
         $options = array(
             'options' => array( 
@@ -14,7 +24,7 @@ class Validator
             ),
         );    
             
-        return filter_var($input, FILTER_VALIDATE_INT, $options);
+        return filter_var($size, FILTER_VALIDATE_INT, $options);
     
     }
 }
