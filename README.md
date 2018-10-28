@@ -19,7 +19,7 @@ Simple program to print a multiplication table.
 
  - Run the program with `php console.php [size]` command where size is an integer from 1-140 range. Default is 10.
 
- ## Running test suite
+## Running test suite
 
  - Run `vendor/bin/phpunit tests` from the project root.
  
