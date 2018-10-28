@@ -9,7 +9,8 @@ class Validator
         $options = array(
             'options' => array( 
                 'default' => 10,
-                'min_range' => 1
+                'min_range' => 1,
+                'max_range' => 140
             ),
         );    
             
