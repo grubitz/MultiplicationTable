@@ -10,7 +10,7 @@
     ],
     "require": {},
     "autoload": {
-        "psr-4": { "": "src/" }
+        "psr-4": { "Edmonds\\": "src/Edmonds/" }
     },
     "require-dev": {
         "phpunit/phpunit": "^7",
