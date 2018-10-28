@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Edmonds;
 
@@ -33,11 +34,11 @@ class ConsolePrinter
     public function print()
     {
         $values = $this->mt->getValues();
-        $colWidth = strlen(count($values) * count($values));
+        $colWidth = strlen((string)($this->mt->getSize() * $this->mt->getSize()));
 
         foreach ($values as $rowNum => $row) {
             foreach ($row as $colNum => $col) {
-                $cell = str_pad($col, $colWidth, " ", STR_PAD_LEFT) . self::COL_DIVIDER_CHAR;
+                $cell = str_pad((string)$col, $colWidth, " ", STR_PAD_LEFT) . self::COL_DIVIDER_CHAR;
                 if ($rowNum === 1 || $colNum === 0) {
                     echo $this->getColoredString($cell);
                 } else {
