@@ -10,20 +10,20 @@ class Validator
 {
     /**
      * Validates size variable. Returns default value if criteria not met.
-     * 
+     *
      * @param mixed $size
-     * 
+     *
      * @return int
      */
     public function validateSize($size): int
     {
         $options = array(
-            'options' => array( 
+            'options' => array(
                 'default' => 10,
                 'min_range' => 1,
                 'max_range' => 140
             ),
-        );    
+        );
             
         return filter_var($size, FILTER_VALIDATE_INT, $options);
     }

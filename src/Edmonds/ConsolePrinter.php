@@ -11,14 +11,14 @@ class ConsolePrinter
     /** @var MultiplicationTable $table contains the table to print */
     private $table;
 
-    const COL_DIVIDER_CHAR = "|"; 
-    const ROW_DIVIDER_CHAR = "―"; 
+    const COL_DIVIDER_CHAR = "|";
+    const ROW_DIVIDER_CHAR = "―";
     const COLOR_START = "\033[1;32m";
     const COLOR_END = "\033[0m";
 
     /**
      * Pass the table to be printed.
-     * 
+     *
      * @param MultiplicationTable $table
      */
     public function __construct(MultiplicationTable $table)
@@ -28,7 +28,7 @@ class ConsolePrinter
 
     /**
      * Prints the multiplication table to the console.
-     * 
+     *
      * @return void
      */
     public function print(): void
@@ -48,19 +48,19 @@ class ConsolePrinter
             echo "\n";
             if ($rowNum === 1) {
                 $divider = " " . str_repeat(self::ROW_DIVIDER_CHAR, (count($values) * ($colWidth + 1) - 1));
-                echo $this->getColoredString($divider). "\n";
+                echo $this->getColoredString($divider) . "\n";
             }
         }
     }
 
     /**
      * Wraps the $string with color tags.
-     * 
+     *
      * @param string $string
-     * 
+     *
      * @return string
      */
-    private function getColoredString(string $string): string 
+    private function getColoredString(string $string): string
     {
         return self::COLOR_START . $string . self::COLOR_END;
     }

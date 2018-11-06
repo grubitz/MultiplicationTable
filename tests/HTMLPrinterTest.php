@@ -6,7 +6,8 @@ use Edmonds\MultiplicationTable;
 use Edmonds\HTMLPrinter;
 
 final class HTMLPrinterTest extends TestCase
-{    
+{
+
     /** @var HTMLPrinter $printer contains the printer to test */
     private $printer;
 
@@ -14,7 +15,8 @@ final class HTMLPrinterTest extends TestCase
     {
         $table = new MultiplicationTable(9);
         $this->printer = new HTMLPrinter($table);
-        $this->setOutputCallback(function() {});
+        $this->setOutputCallback(function () {
+        });
     }
 
     public function testEqualCountRowsAndColumns(): void
@@ -57,7 +59,7 @@ final class HTMLPrinterTest extends TestCase
             foreach ($rowTags as $tag) {
                 self::assertEquals('td', $tag);
             }
-        }        
+        }
     }
 
     public function testCellsHaveExpectedSize(): void
@@ -74,7 +76,9 @@ final class HTMLPrinterTest extends TestCase
             self::assertEquals('width:10%', $td->attributes->item(0)->nodeValue);
         }
         foreach ($ths as $th) {
-            if (count($th->attributes) === 0) continue;
+            if (count($th->attributes) === 0) {
+                continue;
+            }
             self::assertEquals('width:10%', $th->attributes->item(0)->nodeValue);
         }
     }

@@ -14,7 +14,8 @@ final class ConsolePrinterTest extends TestCase
     {
         $table = new MultiplicationTable(5);
         $this->printer = new ConsolePrinter($table);
-        $this->setOutputCallback(function() {});
+        $this->setOutputCallback(function () {
+        });
     }
 
     public function testCellsAreEqualSize(): void
@@ -43,7 +44,7 @@ final class ConsolePrinterTest extends TestCase
         array_pop($cells);
         array_pop($lines);
 
-        self::assertEquals((count($lines)-1), count($cells));
+        self::assertEquals((count($lines) - 1), count($cells));
     }
 
     public function testHeadersAreHighlighted(): void

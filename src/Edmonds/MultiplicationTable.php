@@ -13,7 +13,7 @@ class MultiplicationTable
 
     /**
      * Pass the desired size of the values.
-     * 
+     *
      * @param int $size
      */
     public function __construct(int $size)
@@ -23,7 +23,7 @@ class MultiplicationTable
 
     /**
      * Returns the size.
-     * 
+     *
      * @return int
      */
     public function getSize(): int
@@ -33,16 +33,16 @@ class MultiplicationTable
 
     /**
      * Returns a two dimensional array of values.
-     * 
-     * @return array 
+     *
+     * @return array
      */
     public function getValues(): array
     {
         $values = [];
 
-        for ($row=1; $row<=$this->size; $row++) {
-            for ($col=1; $col<=$this->size; $col++) {
-                $values[$row][] = $row*$col;
+        for ($row = 1; $row <= $this->size; $row++) {
+            for ($col = 1; $col <= $this->size; $col++) {
+                $values[$row][] = $row * $col;
             }
         }
 

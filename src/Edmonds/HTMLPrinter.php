@@ -1,4 +1,4 @@
-<?php 
+<?php
 declare(strict_types=1);
 
 namespace Edmonds;
@@ -13,7 +13,7 @@ class HTMLPrinter
     
     /**
      * Pass the table to be printed.
-     * 
+     *
      * @param MultiplicationTable $table
      */
     public function __construct(MultiplicationTable $table)
@@ -23,7 +23,7 @@ class HTMLPrinter
 
     /**
      * Prints the HTML representation of the table.
-     * 
+     *
      * @return void
      */
     public function print(): void

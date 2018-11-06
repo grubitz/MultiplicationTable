@@ -7,7 +7,7 @@ use Edmonds\Validator;
 final class ValidatorTest extends TestCase
 {
     /** @var Validator $validator contains the validator object to test */
-    private $validator; 
+    private $validator;
 
     public function setUp(): void
     {
