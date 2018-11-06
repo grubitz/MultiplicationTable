@@ -21,5 +21,5 @@ Simple program to print a multiplication table.
 
 ## Running test suite
 
- - Run `vendor/bin/phpunit tests` from the project root.
+ - Run `./bin/phpunit tests` from the project root.
  
