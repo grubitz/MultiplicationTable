@@ -6,10 +6,10 @@ namespace Edmonds;
 require './vendor/autoload.php';
 
 $size = isset($_GET["size"]) ? $_GET["size"] : null;
-$size = Validator::validateSize($size);
+$validator = new Validator();
+$size = $validator->validateSize($size);
 
 $table = new MultiplicationTable($size);
-
 ?>
 
 <!DOCTYPE html>

@@ -6,7 +6,8 @@ namespace Edmonds;
 require './vendor/autoload.php';
 
 $size = isset($argv[1]) ? $argv[1] : null;
-$size = Validator::validateSize($size);
+$validator = new Validator();
+$size = $validator->validateSize($size);
 
 $table = new MultiplicationTable($size);
 

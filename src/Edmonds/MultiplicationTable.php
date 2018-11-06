@@ -6,7 +6,7 @@ namespace Edmonds;
 /**
  * Represents multiplication values of a given size.
  */
-class Multiplicationvalues
+class MultiplicationTable
 {
     /** @var int $size contains the desired size of the values*/
     private $size;

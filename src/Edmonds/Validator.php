@@ -15,7 +15,7 @@ class Validator
      * 
      * @return int
      */
-    public static function validateSize($size): int
+    public function validateSize($size): int
     {
         $options = array(
             'options' => array( 
