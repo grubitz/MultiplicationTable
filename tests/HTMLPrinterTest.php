@@ -12,8 +12,8 @@ final class HTMLPrinterTest extends TestCase
 
     public function setUp(): void
     {
-        $mt = new MultiplicationTable(9);
-        $this->printer = new HTMLPrinter($mt);
+        $table = new MultiplicationTable(9);
+        $this->printer = new HTMLPrinter($table);
         $this->setOutputCallback(function() {});
     }
 

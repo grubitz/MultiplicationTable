@@ -8,8 +8,8 @@ namespace Edmonds;
  */
 class ConsolePrinter
 {
-    /** @var MultiplicationTable $mt contains the table to print */
-    private $mt;
+    /** @var MultiplicationTable $table contains the table to print */
+    private $table;
 
     const COL_DIVIDER_CHAR = "|"; 
     const ROW_DIVIDER_CHAR = "―"; 
@@ -19,11 +19,11 @@ class ConsolePrinter
     /**
      * Pass the table to be printed.
      * 
-     * @param MultiplicationTable $mt
+     * @param MultiplicationTable $table
      */
-    public function __construct(MultiplicationTable $mt)
+    public function __construct(MultiplicationTable $table)
     {
-        $this->mt = $mt;
+        $this->table = $table;
     }
 
     /**
@@ -33,17 +33,17 @@ class ConsolePrinter
      */
     public function print(): void
     {
-        $values = $this->mt->getValues();
-        $colWidth = strlen((string)($this->mt->getSize() * $this->mt->getSize()));
+        $values = $this->table->getValues();
+        $colWidth = strlen((string)($this->table->getSize() * $this->table->getSize()));
 
         foreach ($values as $rowNum => $row) {
             foreach ($row as $colNum => $col) {
                 $cell = str_pad((string)$col, $colWidth, " ", STR_PAD_LEFT) . self::COL_DIVIDER_CHAR;
                 if ($rowNum === 1 || $colNum === 0) {
                     echo $this->getColoredString($cell);
-                } else {
-                    echo $cell;
+                    continue;
                 }
+                echo $cell;
             }
             echo "\n";
             if ($rowNum === 1) {

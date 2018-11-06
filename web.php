@@ -8,7 +8,7 @@ require './vendor/autoload.php';
 $size = isset($_GET["size"]) ? $_GET["size"] : null;
 $size = Validator::validateSize($size);
 
-$mt = new MultiplicationTable($size);
+$table = new MultiplicationTable($size);
 
 ?>
 
@@ -28,7 +28,7 @@ $mt = new MultiplicationTable($size);
         </div>
     </form>
     <?php
-        $printer = new HTMLPrinter($mt);
+        $printer = new HTMLPrinter($table);
         $printer->print();
     ?>
   </body>   

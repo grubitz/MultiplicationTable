@@ -12,8 +12,8 @@ final class ConsolePrinterTest extends TestCase
 
     public function setUp(): void
     {
-        $mt = new MultiplicationTable(5);
-        $this->printer = new ConsolePrinter($mt);
+        $table = new MultiplicationTable(5);
+        $this->printer = new ConsolePrinter($table);
         $this->setOutputCallback(function() {});
     }
 

@@ -4,15 +4,15 @@ declare(strict_types=1);
 namespace Edmonds;
 
 /**
- * Represents multiplication table of a given size.
+ * Represents multiplication values of a given size.
  */
-class MultiplicationTable
+class Multiplicationvalues
 {
-    /** @var int $size contains the desired size of the table*/
+    /** @var int $size contains the desired size of the values*/
     private $size;
 
     /**
-     * Pass the desired size of the table.
+     * Pass the desired size of the values.
      * 
      * @param int $size
      */
@@ -38,14 +38,14 @@ class MultiplicationTable
      */
     public function getValues(): array
     {
-        $table = [];
+        $values = [];
 
         for ($row=1; $row<=$this->size; $row++) {
             for ($col=1; $col<=$this->size; $col++) {
-                $table[$row][] = $row*$col;
+                $values[$row][] = $row*$col;
             }
         }
 
-        return $table;
+        return $values;
     }
 }

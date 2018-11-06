@@ -8,17 +8,17 @@ namespace Edmonds;
  */
 class HTMLPrinter
 {
-    /** @var MultiplicationTable $mt contains the table to print */
-    private $mt;
+    /** @var MultiplicationTable $table contains the table to print */
+    private $table;
     
     /**
      * Pass the table to be printed.
      * 
-     * @param MultiplicationTable $mt
+     * @param MultiplicationTable $table
      */
-    public function __construct(MultiplicationTable $mt)
+    public function __construct(MultiplicationTable $table)
     {
-        $this->mt = $mt;
+        $this->table = $table;
     }
 
     /**
@@ -28,10 +28,10 @@ class HTMLPrinter
      */
     public function print(): void
     {
-        $table = $this->mt->getValues();
-        $size = $this->mt->getSize();
+        $values = $this->table->getValues();
+        $size = $this->table->getSize();
         echo "<table>";
-        foreach ($table as $index => $row) {
+        foreach ($values as $index => $row) {
             if ($index === 1) {
                 echo "<tr><th>*</th>";
                 foreach ($row as $cell) {
