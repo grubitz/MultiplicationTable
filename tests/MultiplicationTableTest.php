@@ -1,8 +1,9 @@
 <?php
 declare(strict_types=1);
 
+namespace Edmonds;
+
 use PHPUnit\Framework\TestCase;
-use Edmonds\MultiplicationTable;
 
 final class MultiplicationTableTest extends TestCase
 {

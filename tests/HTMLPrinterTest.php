@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
+namespace Edmonds;
+
 use PHPUnit\Framework\TestCase;
-use Edmonds\MultiplicationTable;
-use Edmonds\HTMLPrinter;
 
 final class HTMLPrinterTest extends TestCase
 {
@@ -24,7 +24,7 @@ final class HTMLPrinterTest extends TestCase
         $this->printer->print();
         $output = $this->getActualOutput();
 
-        $dom = new DOMDocument();
+        $dom = new \DOMDocument();
         $dom->loadXML($output);
         $rows = $dom->getElementsByTagName('tr');
         $rowCount = $rows->length;
@@ -40,7 +40,7 @@ final class HTMLPrinterTest extends TestCase
         $this->printer->print();
         $output = $this->getActualOutput();
 
-        $dom = new DOMDocument();
+        $dom = new \DOMDocument();
         $dom->loadXML($output);
     
         $rows = $dom->getElementsByTagName('tr');
@@ -67,7 +67,7 @@ final class HTMLPrinterTest extends TestCase
         $this->printer->print();
         $output = $this->getActualOutput();
 
-        $dom = new DOMDocument();
+        $dom = new \DOMDocument();
         $dom->loadXML($output);
         $tds = $dom->getElementsByTagName('td');
         $ths = $dom->getElementsByTagName('th');
