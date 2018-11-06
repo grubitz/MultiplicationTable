@@ -9,16 +9,16 @@ final class ValidatorTest extends TestCase
     
     public function testReturnsPassedValueForValidInput(): void
     {
-        $this->assertEquals(3, Validator::validateSize(3));
+        self::assertEquals(3, Validator::validateSize(3));
     }
 
     public function testReturnsDefaultValueForNonNumericalInput(): void
     {
-        $this->assertEquals(10, Validator::validateSize('pigeon'));
+        self::assertEquals(10, Validator::validateSize('pigeon'));
     }
 
     public function testReturnsDefaultValueForOutOfRangeInput(): void
     {
-        $this->assertEquals(10, Validator::validateSize('9001'));
+        self::assertEquals(10, Validator::validateSize('9001'));
     }
 }

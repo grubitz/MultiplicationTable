@@ -6,6 +6,7 @@ use Edmonds\MultiplicationTable;
 
 final class MultiplicationTableTest extends TestCase
 {
+    /** @var MultiplicationTable $table contains the table to test */
     private $table;
 
     public function setUp(): void
@@ -15,14 +16,14 @@ final class MultiplicationTableTest extends TestCase
 
     public function testGetSizeReturnsSize(): void
     {
-        $this->assertEquals(10, $this->table->getSize());
+        self::assertEquals(10, $this->table->getSize());
     }
 
     public function testGetValuesReturnsCorrectValues(): void
     {
         $values = $this->table->getValues();
-        $this->assertEquals(64, $values[8][7]);
-        $this->assertEquals(9, $values[3][2]);
-        $this->assertEquals(15, $values[5][2]);
+        self::assertEquals(64, $values[8][7]);
+        self::assertEquals(9, $values[3][2]);
+        self::assertEquals(15, $values[5][2]);
     }
 }

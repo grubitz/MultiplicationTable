@@ -26,6 +26,5 @@ class Validator
         );    
             
         return filter_var($size, FILTER_VALIDATE_INT, $options);
-    
     }
 }

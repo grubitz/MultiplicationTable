@@ -6,12 +6,13 @@ use Edmonds\MultiplicationTable;
 use Edmonds\HTMLPrinter;
 
 final class HTMLPrinterTest extends TestCase
-{
+{    
+    /** @var HTMLPrinter $printer contains the printer to test */
     private $printer;
 
-    public function setUp()
+    public function setUp(): void
     {
-        $mt = new MultiplicationTable(5);
+        $mt = new MultiplicationTable(9);
         $this->printer = new HTMLPrinter($mt);
         $this->setOutputCallback(function() {});
     }
@@ -28,7 +29,7 @@ final class HTMLPrinterTest extends TestCase
 
         foreach ($rows as $row) {
             $cellCount = $row->getElementsByTagName('th')->length + $row->getElementsByTagName('td')->length;
-            $this->assertEquals($rowCount, $cellCount);
+            self::assertEquals($rowCount, $cellCount);
         }
     }
 
@@ -47,15 +48,34 @@ final class HTMLPrinterTest extends TestCase
                 $rowTags[] = $element->tagName;
             }
             if ($index === 0) {
-                $this->assertContains('th', $rowTags);
-                $this->assertNotContains('td', $rowTags);
+                self::assertContains('th', $rowTags);
+                self::assertNotContains('td', $rowTags);
                 continue;
             }
-            $this->assertEquals('th', $rowTags[0]);
+            self::assertEquals('th', $rowTags[0]);
             array_shift($rowTags);
             foreach ($rowTags as $tag) {
-                $this->assertEquals('td', $tag);
+                self::assertEquals('td', $tag);
             }
         }        
+    }
+
+    public function testCellsHaveExpectedSize(): void
+    {
+        $this->printer->print();
+        $output = $this->getActualOutput();
+
+        $dom = new DOMDocument();
+        $dom->loadXML($output);
+        $tds = $dom->getElementsByTagName('td');
+        $ths = $dom->getElementsByTagName('th');
+       
+        foreach ($tds as $td) {
+            self::assertEquals('width:10%', $td->attributes->item(0)->nodeValue);
+        }
+        foreach ($ths as $th) {
+            if (count($th->attributes) === 0) continue;
+            self::assertEquals('width:10%', $th->attributes->item(0)->nodeValue);
+        }
     }
 }

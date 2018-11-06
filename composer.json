@@ -1,5 +1,6 @@
 {
     "name": "edmonds/multiplicationtable",
+    "description": "Simple program to display multiplication table",
     "type": "project",
     "license": "proprietary",
     "authors": [
@@ -10,6 +11,10 @@
     ],
     "require": {},
     "autoload": {
+        "classmap": [
+            "src/",
+            "tests/"
+        ],
         "psr-4": { "Edmonds\\": "src/Edmonds/" }
     },
     "require-dev": {
